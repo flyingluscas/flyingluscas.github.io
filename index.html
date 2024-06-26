@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlyZin</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html, body {
+      height: 100vh;
+      overflow: hidden;
+      background-color: #212121;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+    }
+
+    .button {
+      border: none;
+      padding: 20px 30px;
+      margin: 0 10px;
+      background-color: blue;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .button.yes {
+      background-color: green;
+    }
+
+    .button.no {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="main">
+    <h1 class="title">Quer assistir Casamento as Cegas comigo hoje?</h1>
+    <div class="buttons">
+      <button class="button yes">SIM</button>
+      <button class="button no">NÃO</button>
+    </div>
+  </div>
+
+  <script>
+    const yesButton = document.querySelector(".button.yes")
+    const noButton = document.querySelector(".button.no")
+
+    yesButton.addEventListener('click', () => {
+      alert("Sobe pra cá então ❤️")
+    })
+
+    noButton.addEventListener('mouseover', () => {
+      console.log("HEY!")
+
+      // Obter as dimensões da janela
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+
+      // Gerar posições aleatórias dentro da janela
+      const randomX = Math.random() * (windowWidth - noButton.offsetWidth);
+      const randomY = Math.random() * (windowHeight - noButton.offsetHeight);
+
+      // Reposicionar o botão
+      noButton.style.position = "absolute"
+      noButton.style.left = `${randomX}px`;
+      noButton.style.top = `${randomY}px`;
+    })
+  </script>
+</body>
+</html>

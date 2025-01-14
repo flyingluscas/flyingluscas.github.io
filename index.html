@@ -1,94 +1,111 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>FlyZin</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flyzin.dev</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        font-family: "Times New Roman", serif;
+        background-color: #ffffff;
+        color: #000000;
+        text-align: center;
+        transition:
+          background-color 0.3s,
+          color 0.3s;
+      }
 
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                color: white;
-                font-family: Arial, Helvetica, sans-serif;
-            }
+      h1 {
+        font-size: 3rem;
+        margin: 0;
+      }
 
-            html,
-            body {
-                height: 100vh;
-                overflow: hidden;
-                background-color: #212121;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
+      .links {
+        margin-top: 10px;
+      }
 
-            .title {
-                margin-bottom: 50px;
-                text-align: center;
-            }
+      .links a {
+        font-size: 1.2rem;
+        color: #555555;
+        text-decoration: none;
+        margin: 0 10px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: color 0.3s ease;
+      }
 
-            .buttons {
-                display: flex;
-                justify-content: center;
-            }
+      .links a:hover {
+        color: #000000;
+      }
 
-            .button {
-                border: none;
-                padding: 20px 30px;
-                margin: 0 10px;
-                background-color: blue;
-                border-radius: 10px;
-                cursor: pointer;
-            }
+      .links img {
+        width: 20px;
+        height: 20px;
+      }
 
-            .button.yes {
-                background-color: green;
-            }
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2rem;
+        }
 
-            .button.no {
-                background-color: red;
-                transition:
-                    left 0.5s ease,
-                    top 0.5s ease;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="main">
-            <h1 class="title">Quer revisar meu PR?</h1>
-            <div class="buttons">
-                <button class="button yes">SIM</button>
-                <button class="button no">NÃO</button>
-            </div>
-        </div>
+        .links a {
+          font-size: 1rem;
+        }
 
-        <script>
-            const yesButton = document.querySelector(".button.yes");
-            const noButton = document.querySelector(".button.no");
+        .links img {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>flyzin.dev</h1>
+    <div class="links">
+      <a href="https://github.com/flyingluscas" target="_blank">
+        <img
+          src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/github.svg"
+          alt="GitHub"
+        />
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/flyingluscas" target="_blank">
+        <img
+          src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/linkedin.svg"
+          alt="LinkedIn"
+        />
+        LinkedIn
+      </a>
+      <a href="https://instagram.com/flyingluscas" target="_blank">
+        <img
+          src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/instagram.svg"
+          alt="Instagram"
+        />
+        Instagram
+      </a>
+    </div>
 
-            yesButton.addEventListener("click", () => {
-                window.location.replace(
-                    "https://github.com/z1app/dbt/pull/209",
-                );
-            });
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-NK020SHGWN"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-            noButton.addEventListener("mouseover", () => {
-                // Obter as dimensões da janela
-                const windowWidth = window.innerWidth;
-                const windowHeight = window.innerHeight;
-
-                // Gerar posições aleatórias dentro da janela
-                const randomX =
-                    Math.random() * (windowWidth - noButton.offsetWidth);
-                const randomY =
-                    Math.random() * (windowHeight - noButton.offsetHeight);
-
-                // Reposicionar o botão
-                noButton.style.position = "absolute";
-                noButton.style.left = `${randomX}px`;
-                noButton.style.top = `${randomY}px`;
-            });
-        </script>
-    </body>
+      gtag("config", "G-NK020SHGWN");
+    </script>
+  </body>
 </html>
